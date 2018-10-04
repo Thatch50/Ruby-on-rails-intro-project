@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  front_default: MyString
+  back_default: MyString
+  front_shiny: MyString
+  back_shiny: MyString
+  referenes: 
+
+two:
+  front_default: MyString
+  back_default: MyString
+  front_shiny: MyString
+  back_shiny: MyString
+  referenes: 
