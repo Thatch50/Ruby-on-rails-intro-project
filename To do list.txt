@@ -1,0 +1,25 @@
+- Git + Github source to push from master to origin
+
+- Create Models (Pokemon, Types, Moves, Sprites, Base Stats)
+  - add validations (min 2)
+  - add associations
+
+- Create Seed scripts (1, 2, 3, 4)
+  - using endpoints:
+    - Pokemon
+    = Types
+    - Moves
+
+- Create Controllers (pokemon, Moves, Types)
+  - fill controllers (show, index)
+
+- Create Views
+  - add app view + styles
+  - add about page
+  - add controller views + styles
+  - add nav bar + links
+
+- pagination
+- Search form
+= Category filter
+- validate html

@@ -5,7 +5,7 @@ class CreateSprites < ActiveRecord::Migration[5.2]
       t.string :back_default
       t.string :front_shiny
       t.string :back_shiny
-      t.pokemon :referenes
+      t.references :pokemon, foreign_key: true
 
       t.timestamps
     end

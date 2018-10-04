@@ -1,0 +1,76 @@
+Ruby project
+
+Pokemon
+
+Data description:
+- Using the Pokemon api
+- Data is structured with JSON following RESTFUL API Standards
+- Tables made will be Pokemon, Sprites, Types and Base Stats (+ relational tables)
+- https://pokeapi.co/api/v2/pokemon/ --> Pokemon
+- https://pokeapi.co/api/v2/pokemon/id=? --> Sprites, Base Stats
+- https://pokeapi.co/api/v2/type/ --> Types
+
+ERD Outline:
+
+*Endpoints:
+- https://pokeapi.co/api/v2/pokemon/
+- https://pokeapi.co/api/v2/type/
+- https://pokeapi.co/api/v2/pokemon/id=?
+
+# Pokemon info
+Pokemon
+- Pokemon ID : int
+- Name : string
+- Number : int
+- Height : double
+- Weight : double
+
+# Pokemon has many Sprites
+# Sprites belong to 1 pokemon
+# Sprites info
+Sprites
+- Sprites ID : int
+- Front Default : string (link)
+- Back Default : string (link)
+- Front Shiny : string (link)
+- Back Shiny : string (link)
+
+# Pokemon has many Types
+# Types belong to 1 pokemon
+# PokemonTypes
+- Pokemon ID : int
+- Type ID : int
+
+# Pokemon has 1 - many types
+# Types belong to many pokemon
+# List of Types
+Types
+- Type ID : int
+- Name : string
+
+# Pokemon has 1 set of base stats
+# Base stats belong to 1 pokemon
+# Base stats belonging to specific pokemon
+BaseStats
+- BaseStats ID : int
+- HP : int
+- Attack : int
+- Defense : int
+- Special Attack : int
+- Special Defense : int
+- Speed : int
+
+STEPS
+-------
+- understand API
+- set up validations
+- pull data into seeds.rb
+- create nav bar (about, pokemon)
+- all pokemon page display table 3.1
+- single pokemon page
+- all pokemon page type category badge
+- paginated all pokemon/sprites
+- A MAP REALLY... 3.6 (maybe but it's fuego)
+- filter bar pokemons page
+- filter bar + type sort
+- validate html 5.1

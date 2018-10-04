@@ -7,7 +7,7 @@ class CreateBaseStats < ActiveRecord::Migration[5.2]
       t.integer :special_attack
       t.integer :special_defense
       t.integer :speed
-      t.pokemon :references
+      t.references :pokemon, foreign_key: true
 
       t.timestamps
     end

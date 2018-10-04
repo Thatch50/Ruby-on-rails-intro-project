@@ -1,8 +1,8 @@
 class CreatePokemonMoves < ActiveRecord::Migration[5.2]
   def change
     create_table :pokemon_moves do |t|
-      t.pokemon :references
-      t.move :references
+      t.references :pokemon, foreign_key: true
+      t.references :move, foreign_key: true
 
       t.timestamps
     end
