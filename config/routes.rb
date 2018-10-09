@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'types/show'
+  get 'types/index'
   get 'moves/show'
   get 'moves/index'
   get 'pokemons/show'
