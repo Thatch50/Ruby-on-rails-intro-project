@@ -8,4 +8,6 @@ class Pokemon < ApplicationRecord
   validates :number, :numericality => { only_integer: true, greater_than: 0}
   validates :height, :numericality => { only_integer: false, greater_than: 0}
   validates :weight, :numericality => { only_integer: false, greater_than: 0}
+
+  paginates_per 27
 end
