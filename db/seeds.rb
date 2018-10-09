@@ -60,8 +60,8 @@ NUMBER_OF_POKEMON.times do |i|
                       move: move)
   end
 
-  single_pokemon["types"].reverse_each do |m|
-    type_id = /\b\d{1,3}/.match(m["type"]["url"])[0]
+  single_pokemon["types"].reverse_each do |t|
+    type_id = /\b\d{1,3}/.match(t["type"]["url"])[0]
     type = Type.find(type_id)
     PokemonType.create(pokemon: pokemon,
                       type: type)

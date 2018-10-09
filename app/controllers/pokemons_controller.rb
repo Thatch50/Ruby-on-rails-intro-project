@@ -3,5 +3,6 @@ class PokemonsController < ApplicationController
   end
 
   def index
+    @pokemons = Pokemon.all
   end
 end
