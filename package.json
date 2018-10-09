@@ -1,5 +1,7 @@
 {
   "name": "data-project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "spectre.css": "^0.5.3"
+  }
 }

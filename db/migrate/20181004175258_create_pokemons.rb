@@ -7,6 +7,8 @@ class CreatePokemons < ActiveRecord::Migration[5.2]
       t.float :weight
 
       t.timestamps
+      # drop_table :moves
+      # drop_table :types
     end
   end
 end

@@ -1,5 +1,5 @@
 class Sprite < ApplicationRecord
-  belongs_to :pokemons
+  belongs_to :pokemon
 
   validates :front_default, presence: true
   validates :back_default, presence: true
