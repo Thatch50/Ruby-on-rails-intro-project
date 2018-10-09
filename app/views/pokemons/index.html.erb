@@ -1,44 +1,32 @@
-<% @pokemons.each do |pokemon| %>
+
 <div class= "columns">
-    <div class="column col-8col-sm-12 col-mx-auto pokedex-entry">
+  <% @pokemons.each do |pokemon| %>
+    <div class="column col-4 col-mx-auto pokedex-entry">
       <div class="panel custom-panel">
         <div class="panel-header text-center">
           <figure class="avatar avatar-xl custom-avatar">
             <%= image_tag "#{pokemon.sprites.first.front_default}" %>
           </figure>
-          <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{pokemon.sprites.first.back_default}" %>
-          </figure>
-          <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{pokemon.sprites.first.front_shiny}" %>
-          </figure>
-          <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{pokemon.sprites.first.back_shiny}" %>
-          </figure>
           <div class="panel-title h5 mt-10"><a href="#"><%= link_to pokemon.name, pokemon %></a></div>
         </div>
           <div class="panel-body">
-
             <div class="tile tile-centered text-center">
               <div class="tile-content">
                 <div class="tile-title text-bold">Pokedex No <%= pokemon.number %></div>
               </div>
             </div>
-
             <div class="tile tile-centered text-center">
               <div class="tile-content">
                 <div class="tile-title text-bold">Height: </div>
                 <div class="tile-subtitle"><%= pokemon.height %> m</div>
               </div>
             </div>
-
             <div class="tile tile-centered text-center">
               <div class="tile-content">
                 <div class="tile-title text-bold">Weight:</div>
                 <div class="tile-subtitle"><%= pokemon.weight.to_i %> kg</div>
               </div>
             </div>
-
             <div class="tile tile-centered text-center">
               <div class="tile-content">
                 <div class="tile-title text-bold">Types:</div>
@@ -54,34 +42,8 @@
                   </div>
               </div>
             </div>
-
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th>HP</th>
-                  <th>ATK</th>
-                  <th>DEF</th>
-                  <th>SP. ATK</th>
-                  <th>SP. DEF</th>
-                  <th>SPD</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="active">
-                  <td><%= pokemon.baseStats.first.hp %></td>
-                  <td><%= pokemon.baseStats.first.attack %></td>
-                  <td><%= pokemon.baseStats.first.defense %></td>
-                  <td><%= pokemon.baseStats.first.special_attack %></td>
-                  <td><%= pokemon.baseStats.first.special_defense %></td>
-                  <td><%= pokemon.baseStats.first.speed %></td>
-                </tr>
-              </tbody>
-            </table>
-
-            <%= link_to 'Edit', edit_pokemon_path(@pokemon), class: "btn btn-primary" %>
-            <%= link_to 'Back', pokemons_path, class: "btn" %>
           </div>
         </div>
       </div>
+  <% end %>
 </div>
-<% end %>

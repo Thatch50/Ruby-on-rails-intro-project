@@ -1,2 +1,49 @@
-<h1>Pokemons#show</h1>
-<p>Find me in app/views/pokemons/show.html.erb</p>
+<%= paginate @pokemons %>
+<div class= "columns">
+  <% @pokemons.each do |pokemon| %>
+    <div class="column col-4 col-mx-auto pokedex-entry">
+      <div class="panel custom-panel">
+        <div class="panel-header text-center">
+          <figure class="avatar avatar-xl custom-avatar">
+            <%= image_tag "#{pokemon.sprites.first.front_default}" %>
+          </figure>
+          <div class="panel-title h5 mt-10"><a href="#"><%= link_to pokemon.name, pokemon %></a></div>
+        </div>
+          <div class="panel-body">
+            <div class="tile tile-centered text-center">
+              <div class="tile-content">
+                <div class="tile-title text-bold">Pokedex No <%= pokemon.number %></div>
+              </div>
+            </div>
+            <div class="tile tile-centered text-center">
+              <div class="tile-content">
+                <div class="tile-title text-bold">Height: </div>
+                <div class="tile-subtitle"><%= pokemon.height %> m</div>
+              </div>
+            </div>
+            <div class="tile tile-centered text-center">
+              <div class="tile-content">
+                <div class="tile-title text-bold">Weight:</div>
+                <div class="tile-subtitle"><%= pokemon.weight.to_i %> kg</div>
+              </div>
+            </div>
+            <div class="tile tile-centered text-center">
+              <div class="tile-content">
+                <div class="tile-title text-bold">Types:</div>
+                  <div class="tile-subtitle">
+                    <span class="label label-rounded label-primary">
+                      <%= pokemon.types.first.primary %>
+                    </span>
+                    <% if (pokemon.types.first.secondary) %>
+                      <span class="label label-rounded label-secondary">
+                        <%= pokemon.types.first.secondary %>
+                      </span>
+                    <% end %>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

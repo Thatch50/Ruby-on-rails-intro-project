@@ -1,3 +1,55 @@
-// Place all the styles related to the Pokemons controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$body-red: #bb0a0ad6;
+$dark-red: #6f0303f0;
+$light-red: #cb68682e;
+$light-grey: #80808085;
+$white: #FFF;
+
+html>body {
+  background: $body-red;
+}
+
+.navbar-section>.btn.btn-link {
+  color: $white;
+}
+
+.input-group.input-inline {
+  margin-right: 8px;
+}
+
+.columns {
+  background: $white;
+  margin-left: -2.4rem;
+  margin-right: -2.4rem;
+  padding: 1rem;
+}
+
+.pokedex-entry {
+  padding: 8px;
+}
+
+.pokedex-entry>.panel {
+  border: 2px solid $dark-red;
+}
+
+.panel.custom-panel {
+  background: $light-red;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+figure.avatar.avatar-xl.custom-avatar {
+  height: 5rem;
+  width: 5rem;
+  background: $white;
+  border: 2px solid $dark-red;
+}
+
+.tab .tab-item a.active-red,
+.tab .tab-item.active-red a {
+  border-bottom-color: $dark-red;
+  color: $dark-red;
+}
+
+.table {
+  margin-bottom: 1rem;
+}
