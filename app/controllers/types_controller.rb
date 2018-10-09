@@ -3,5 +3,6 @@ class TypesController < ApplicationController
   end
 
   def index
+    @types = Type.all
   end
 end
