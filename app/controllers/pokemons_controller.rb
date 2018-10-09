@@ -4,6 +4,6 @@ class PokemonsController < ApplicationController
   end
 
   def index
-    @pokemons = Pokemon.all.page(params[:page])
+    @pokemons = Pokemon.search(params[:search]).page(params[:page])
   end
 end

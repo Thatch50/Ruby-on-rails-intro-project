@@ -3,16 +3,16 @@
       <div class="panel custom-panel">
         <div class="panel-header text-center">
           <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{@pokemon.sprites.first.front_default}" %>
+            <%= image_tag "#{@pokemon.sprites.first.front_default}", alt: "pokemon-sprite" %>
           </figure>
           <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{@pokemon.sprites.first.back_default}" %>
+            <%= image_tag "#{@pokemon.sprites.first.back_default}", alt: "pokemon-sprite" %>
           </figure>
           <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{@pokemon.sprites.first.front_shiny}" %>
+            <%= image_tag "#{@pokemon.sprites.first.front_shiny}", alt: "pokemon-sprite" %>
           </figure>
           <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{@pokemon.sprites.first.back_shiny}" %>
+            <%= image_tag "#{@pokemon.sprites.first.back_shiny}", alt: "pokemon-sprite" %>
           </figure>
           <div class="panel-title h5 mt-10"><%= @pokemon.name %></div>
         </div>

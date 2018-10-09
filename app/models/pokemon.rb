@@ -10,4 +10,12 @@ class Pokemon < ApplicationRecord
   validates :weight, :numericality => { only_integer: false, greater_than: 0}
 
   paginates_per 27
+
+  def self.search(name)
+    if name
+      where('name LIKE ?', "%#{name}%")
+    else
+      all
+    end
+  end
 end

@@ -15,13 +15,20 @@
         <a href="/" class="btn btn-link">Pokemon</a>
         <a href="/types" class="btn btn-link">Types</a>
         <a href="/moves" class="btn btn-link">Moves</a>
-        <a href="#" class="btn btn-link">About</a>
+        <a href="/pages/about" class="btn btn-link">About</a>
       </section>
       <section class="navbar-center">
-        <a href="/"><%= image_tag "pokeball-icon.png" %></a>
+        <a href="/"><%= image_tag "pokeball-icon.png", alt: 'pokeball'  %></a>
       </section>
       <section class="navbar-section">
-
+        <%= form_tag(pokemons_path, method: :get, :class => "form-horizontal") do %>
+          <div class="form-group">
+            <div class="col-9 col-sm-12">
+              <%= text_field_tag :search, params[:search], :class => "form-input" %>
+            </div>
+          </div>
+          <%= submit_tag 'Search for pokemon', name: nil, :class => "btn btn-primary" %>
+        <% end %>
       </section>
     </header>
 
