@@ -1,49 +1,80 @@
-<%= paginate @pokemons %>
 <div class= "columns">
-  <% @pokemons.each do |pokemon| %>
-    <div class="column col-4 col-mx-auto pokedex-entry">
+    <div class="column col-8col-sm-12 col-mx-auto pokedex-entry">
       <div class="panel custom-panel">
         <div class="panel-header text-center">
           <figure class="avatar avatar-xl custom-avatar">
-            <%= image_tag "#{pokemon.sprites.first.front_default}" %>
+            <%= image_tag "#{@pokemon.sprites.first.front_default}" %>
           </figure>
-          <div class="panel-title h5 mt-10"><a href="#"><%= link_to pokemon.name, pokemon %></a></div>
+          <figure class="avatar avatar-xl custom-avatar">
+            <%= image_tag "#{@pokemon.sprites.first.back_default}" %>
+          </figure>
+          <figure class="avatar avatar-xl custom-avatar">
+            <%= image_tag "#{@pokemon.sprites.first.front_shiny}" %>
+          </figure>
+          <figure class="avatar avatar-xl custom-avatar">
+            <%= image_tag "#{@pokemon.sprites.first.back_shiny}" %>
+          </figure>
+          <div class="panel-title h5 mt-10"><%= @pokemon.name %></div>
         </div>
           <div class="panel-body">
+
             <div class="tile tile-centered text-center">
               <div class="tile-content">
-                <div class="tile-title text-bold">Pokedex No <%= pokemon.number %></div>
+                <div class="tile-title text-bold">Pokedex No <%= @pokemon.number %></div>
               </div>
             </div>
+
             <div class="tile tile-centered text-center">
               <div class="tile-content">
                 <div class="tile-title text-bold">Height: </div>
-                <div class="tile-subtitle"><%= pokemon.height %> m</div>
+                <div class="tile-subtitle"><%= @pokemon.height %> m</div>
               </div>
             </div>
+
             <div class="tile tile-centered text-center">
               <div class="tile-content">
                 <div class="tile-title text-bold">Weight:</div>
-                <div class="tile-subtitle"><%= pokemon.weight.to_i %> kg</div>
+                <div class="tile-subtitle"><%= @pokemon.weight.to_i %> kg</div>
               </div>
             </div>
-            <div class="tile tile-centered text-center">
-              <div class="tile-content">
-                <div class="tile-title text-bold">Types:</div>
-                  <div class="tile-subtitle">
-                    <span class="label label-rounded label-primary">
-                      <%= pokemon.types.first.primary %>
-                    </span>
-                    <% if (pokemon.types.first.secondary) %>
-                      <span class="label label-rounded label-secondary">
-                        <%= pokemon.types.first.secondary %>
-                      </span>
-                    <% end %>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>HP</th>
+                  <th>ATK</th>
+                  <th>DEF</th>
+                  <th>SP. ATK</th>
+                  <th>SP. DEF</th>
+                  <th>SPD</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @pokemon.base_stats.first.hp %></td>
+                  <td><%= @pokemon.base_stats.first.attack %></td>
+                  <td><%= @pokemon.base_stats.first.defense %></td>
+                  <td><%= @pokemon.base_stats.first.special_attack %></td>
+                  <td><%= @pokemon.base_stats.first.special_defense %></td>
+                  <td><%= @pokemon.base_stats.first.speed %></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="filter-body columns">
+            <% @pokemon.moves.each do |move| %>
+              <div class="column col-4 filter-item">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title"><%= move.name.capitalize.tr('-', ' ') %></div>
                   </div>
+                </div>
               </div>
+              <% end %>
             </div>
+
+            <%= link_to 'Back', pokemons_path, class: "btn" %>
           </div>
         </div>
       </div>
-  <% end %>
 </div>

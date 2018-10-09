@@ -1,4 +1,3 @@
-
 <div class= "columns">
   <% @pokemons.each do |pokemon| %>
     <div class="column col-4 col-mx-auto pokedex-entry">
@@ -27,21 +26,7 @@
                 <div class="tile-subtitle"><%= pokemon.weight.to_i %> kg</div>
               </div>
             </div>
-            <div class="tile tile-centered text-center">
-              <div class="tile-content">
-                <div class="tile-title text-bold">Types:</div>
-                  <div class="tile-subtitle">
-                    <span class="label label-rounded label-primary">
-                      <%= pokemon.types.first.primary %>
-                    </span>
-                    <% if (pokemon.types.first.secondary) %>
-                      <span class="label label-rounded label-secondary">
-                        <%= pokemon.types.first.secondary %>
-                      </span>
-                    <% end %>
-                  </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
